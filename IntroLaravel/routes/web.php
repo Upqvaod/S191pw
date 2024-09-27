@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Route;
 
 /*el primer parametro es la vista y el segundo es la ruta.
 Funciona tanto la sintaxis de arriba como la de abajo*/
-Route::view('/','welcome');
 
-Route::view('/formulario','formulario');
+Route::view('/','inicio') ->name('rutainicio');
+
+Route::view('/formulario','formulario')->name('rutaformulario');
+
+Route::view('/consultas','clientes')->name('rutaconsulta');
+
+
