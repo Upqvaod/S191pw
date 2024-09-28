@@ -1,35 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite(['resources/js/app.js'])
-    <link rel="stylesheet" href="{{ asset('css/fondo.css') }}">
-    <title>Consultar Clientes</title>
-</head>
+@extends('layouts.plantilla2')
 
-<body>
-    {{-- inicia navbar --}}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{route('rutainicio')}}"> Turista sin Maps </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{route('rutaformulario')}}">Registro Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('rutaconsulta')}}">Consulta Clientes</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    {{-- Finaliza navbar --}}
+@section('titulo','Clientes')
 
+    @section('contenido2')
+        
     {{-- Inicia tarjetaCliente --}}
 <div class="container mt-5 col-md-8">
 
@@ -39,7 +13,7 @@
         </div>
 
         <div class="card-body">
-            <h5 class="fw-bold">Diego_zombie05@hotmail.com</h5>
+            <h5 class="fw-bold">diego_zombie05@hotmail.com</h5>
             <h5 class="fw-medium">4423334444</h5>
             <p class="card-text fw-lighter"> </p>
         </div>
@@ -54,5 +28,4 @@
 
 </div> {{-- divcontainer --}}
 
-</body>
-</html>
+@endsection
