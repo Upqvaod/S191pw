@@ -12,4 +12,9 @@
         Contenido de la tarjeta 2
     </x-Card>
 
+    
+    <x-Alert tipo="danger">Soy un alerta de peligro</x-Alert>
+
+    <x-Alert tipo="success">Soy un alerta de confirmacion</x-Alert>
+
 @endsection

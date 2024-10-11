@@ -18,3 +18,4 @@ Route::view('/consultas','clientes')->name('rutaconsulta');
 
 Route::view('/component', 'componentes');
 
+
