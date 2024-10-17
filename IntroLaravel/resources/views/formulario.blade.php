@@ -14,22 +14,23 @@
 
           <div class="card-body text-justify ">
 
-            <form>
+          <form method="POST"  action="/enviarCliente">
+          @csrf
               <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre: </label>
-                <input type="text" class="form-control" id="nombre">
+                <input type="text" class="form-control" name="txtnombre">
               </div>
               <div class="mb-3">
                 <label for="Apellido" class="form-label">Apellido: </label>
-                <input type="text" class="form-control" id="apellido">
+                <input type="text" class="form-control" name="apellido">
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Correo: </label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" name="txtemail">
               </div>
               <div class="mb-3">
                 <label for="telefono" class="form-label">Telefono: </label>
-                <input type="text" class="form-control" id="telefono">
+                <input type="text" class="form-control" name="txttelefono">
               </div>
               </div>
             <div class="card-footer text-muted">
@@ -37,7 +38,9 @@
             <div class="d-grid gap-2 mt-2 mb-1">
               <button type="submit" class="btn btn-primary success btn sm"> Guardar Cliente </button>
             </div>
-            </form>
+
+          </form>
+        
         </div>
       </div>
     </div>
