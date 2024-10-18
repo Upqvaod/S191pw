@@ -8,9 +8,9 @@
     @vite(['resources/js/app.js'])
 </head>
 <body>
-<nav class="navbar navbar-dark bg-warning">
+<nav class="navbar navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">Repaso 1 - Conversor</a>
+        <a class="navbar-brand">Repaso 1 - Conversor</a>
     </div>
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
     <li class="nav-item">
@@ -19,18 +19,19 @@
 </nav>
   <div class="container mt-5">
     <h2>Convertidor de unidades de Datos</h2>
-    <form>
+    <form method="POST" action="/convertir">
+    @csrf
         <div class="form-group">
             <label for="cantidad">Cantidad</label>
-            <input type="text" class="form-control" id="cantidad" name="cantidad" required>
+            <input type="text" class="form-control" name="cantidad" required>
         </div>
         <div class="form-group mt-3">
-            <label for="conversion">Convertir:</label>
-            <select class="form-control" id="conversion" name="conversion">
-                <option value="mb-to-gb">MB a GB</option>
-                <option value="gb-to-mb">GB a MB</option>
-                <option value="gb-to-tb">GB a TB</option>
-                <option value="tb-to-gb">TB a GB</option>
+            <label for="conversion" class="form-label">Convertir:</label>
+            <select class="form-control" name="conversion">
+                <option value="mb-a-gb">MB a GB</option>
+                <option value="gb-a-mb">GB a MB</option>
+                <option value="gb-a-tb">GB a TB</option>
+                <option value="tb-a-gb">TB a GB</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Convertir</button>
