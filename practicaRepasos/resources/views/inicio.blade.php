@@ -21,8 +21,9 @@
               <li class="list-group-item">S-191</li>
           </ul>
           <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn btn-info" type="button">Ir al convertidor de Almacenamiento</button>
-          </div>
+            <a href="/repaso1" class="btn btn-info" role="button">Repaso 1</a>
+        </div>
+        
       </div>
   </div>
 </body>
