@@ -19,24 +19,19 @@ class controladorVistas extends Controller
     }
 
     public function procesarCliente(Request $peticion){     
-    //reedireccion usando la ruta    
-    //return redirect('/');
+    //validacion de campos en el formulario
+    $validacion= $peticion-> validate([ 
+        'txtnombre'=>'required|min:3|max:50', 
+        'txtapellido'=>'required',
+        'txtcorreo'=>'required|email',
+        'txttelefono'=>'required|numeric',
+    ]);
 
-    //redireccion usando el nombre de la ruta
-    //return redirect()->route('rutaconsulta');
-
-    //redireccion al origen de la peticion
-    //return back();
-
-    //redireccion con valor adjunto (variables, arreglos, etc.)
-    $id=[['usuario'=>'1'], ['usuario'=>'2']];
-    return view('formulario', compact('id'));
-    
     //redireccion enviando msj en session
-    //$usuario=$peticion->input('txtnombre');
-    //session()->flash('exito','Se guardo el usuario '.$usuario);
+    $usuario=$peticion->input('txtnombre');
+    session()->flash('exito','Se guardo el usuario '.$usuario);
 
-    //return to_route('rutaformulario');
+    return to_route('rutaformulario');
 
     }
 }
