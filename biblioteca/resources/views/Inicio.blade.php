@@ -3,6 +3,7 @@
 @section('titulo', 'Página Principal')
 
 @section('content')
-    <h1>Bienvenido a la biblioteca virtual </h1>
-    <h2>Noticia Literaria</h2>
+    <h1>Biblioteca de la musaraña</h1>
+    <p>Noticia literaria</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> 
 @endsection

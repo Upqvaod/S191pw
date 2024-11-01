@@ -7,18 +7,25 @@
     <title>@yield('titulo')</title>
 </head>
 <body>
-    <div class="container">
-      <nav class="navbar navbar-light bg-light">
-        <form class="container-fluid justify-content-start">
-          <button class="btn btn-outline-success me-2" type="button">Pagina principal</button>
-          <button class="btn btn-sm btn-outline-secondary" type="button">Registro de libros</button>
-        </form>
-      </nav>
-        @yield('content')
-    </div>
-    <footer>
-    
-        <p> La musaraña &copy; Todos los derechos reservados {{ date('d-m-Y') }}    </p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <a class="navbar-brand" href="{{ route('inicio') }}">Pagina de inicio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('registro') }}">Registrar Libro</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    @yield('content')
+
+    <footer class="text-center py-4">
+        <p>&copy; La Biblioteca de la musaraña {{ date('d-m-Y') }}</p>
     </footer>
+
 </body>
 </html>
