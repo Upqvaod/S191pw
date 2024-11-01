@@ -19,31 +19,31 @@
 @endif
 
 
-<h1>Registro de libros</h1>
+<h1>{{__('Registro de libros')}}</h1>
 <form action="{{ route('registro.libro') }}" method="POST" class="row g-3">
     @csrf
     <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email de la editorial</label>
+        <label for="inputEmail4" class="form-label">{{__('Email de la editorial')}}</label>
         <input type="email" class="form-control" name="txtemail" >
         <small class="text-danger fst-italic">{{$errors->first('txtemail')}}</small>
     </div>
     <div class="col-md-6">
-        <label for="inputTitle" class="form-label">Título</label>
+        <label for="inputTitle" class="form-label">{{__('Título')}}</label>
         <input type="text" class="form-control" name="txttitulo">
         <small class="text-danger fst-italic">{{$errors->first('txttitulo')}}</small>
     </div>
     <div class="col-12">
-        <label for="inputAuthor" class="form-label">Autor</label>
+        <label for="inputAuthor" class="form-label">{{__('Autor')}}</label>
         <input type="text" class="form-control" name="txtautor">
         <small class="text-danger fst-italic">{{$errors->first('txtautor')}}</small>
     </div>
     <div class="col-12">
-        <label for="inputEditorial" class="form-label">Editorial</label>
+        <label for="inputEditorial" class="form-label">{{__('Editorial')}}</label>
         <input type="text" class="form-control" name="txteditorial">
         <small class="text-danger fst-italic">{{$errors->first('txteditorial')}}</small>
     </div>
     <div class="col-md-4">
-        <label for="inputYear" class="form-label">Año de publicación</label>
+        <label for="inputYear" class="form-label">{{__('Año de publicación')}}</label>
         <input type="number" class="form-control" name="txtyear">
         <small class="text-danger fst-italic">{{$errors->first('txtyear')}}</small>
     </div>
@@ -53,12 +53,12 @@
         <small class="text-danger fst-italic">{{$errors->first('txtisbn')}}</small>
     </div>
     <div class="col-md-2">
-        <label for="inputPages" class="form-label">Páginas</label>
+        <label for="inputPages" class="form-label"> {{__('Páginas')}}</label>
         <input type="number" class="form-control" name="txtpaginas">
         <small class="text-danger fst-italic">{{$errors->first('txtpaginas')}}</small>
     </div>
     <div class="col-12">
-        <button type="submit" class="btn btn-primary">Guardar Libro</button>
+        <button type="submit" class="btn btn-primary">{{__('Guardar Libro')}}</button>
     </div>
 </form>
 @endsection
