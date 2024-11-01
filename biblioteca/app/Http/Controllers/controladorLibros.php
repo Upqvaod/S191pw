@@ -12,8 +12,8 @@ class controladorLibros extends Controller
         return view('registro'); 
     }
 
-    public function guardar(validadorLibro $request)
+    public function guardar(validadorLibro $peticion)
     {
-        return redirect()->route('registro')->with('success', 'Libro registrado exitosamente');
+        return redirect()->route('registro')->with('exito', 'Todo correcto: Libro “' . $peticion->input('txttitulo') . '” guardado');
     }
 }

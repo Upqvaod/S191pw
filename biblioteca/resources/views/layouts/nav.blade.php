@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['resources/js/app.js'])
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>@yield('titulo')</title>
 </head>
 <body>
@@ -23,8 +24,9 @@
 
     @yield('content')
 
-    <footer class="text-center py-4">
-        <p>&copy; La Biblioteca de la musaraña {{ date('d-m-Y') }}</p>
+    <footer class="text-center py-4 bg-dark text-white mt-5">
+      <hr class="border-light">
+      <p>&copy; La Biblioteca de la musaraña {{ date('d-m-Y') }}</p>
     </footer>
 
 </body>
