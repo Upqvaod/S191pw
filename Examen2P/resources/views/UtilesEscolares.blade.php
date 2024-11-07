@@ -7,13 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+
     <h1>Utiles Escolares</h1>
 
-    
+    Se guardo: {{$request}}  {{$marca}} {{$cantidad}}
+
     Nombre: <input type="text" name="txtnombre">
     Marca: <input type="text" name="txtmarca">
     Cantidad: <input type="text" name="txtcantidad">
+    <button type="submit">Guardar Utiles</button>
+    </form>
 
-    <button>Guardar Utiles</button>
 </body>
 </html>

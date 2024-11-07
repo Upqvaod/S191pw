@@ -11,14 +11,16 @@ class controladorUtiles extends Controller
         return view('UtilesEscolares');
     }
 
-    public function store(Request $request)
+    public function procesarFomulario(Request $request)
     {
-        $request->validate([
-            'txtnombre' => 'required',
-            'txtmarca' => 'required',
-            'txtcantidad' => 'required|numeric'
-        ]);
+        $nombre = $request->input('txtnombre');
+        $marca = $request->input('txtmarca');
+        $cantidad = $request->input('txtcantidad');
 
-        return $request->all();
+        return "Nombre: $nombre, Marca: $marca, Cantidad: $cantidad";
+    
     }
-}
+
+    public func
+
+}   
