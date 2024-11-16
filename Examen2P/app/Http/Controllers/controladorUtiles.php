@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validadorUtiles;
 
 class controladorUtiles extends Controller
 {
@@ -15,12 +16,9 @@ class controladorUtiles extends Controller
     {
         $nombre = $request->input('txtnombre');
         $marca = $request->input('txtmarca');
-        $cantidad = $request->input('txtcantidad');
+        
 
-        return "Nombre: $nombre, Marca: $marca, Cantidad: $cantidad";
+        return "Nombre: $nombre, Marca: $marca";
     
     }
-
-    public func
-
-}   
+}

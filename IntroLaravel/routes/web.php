@@ -2,13 +2,9 @@
 
 use App\Http\Controllers\clienteController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\controladorVistas;
 
 // rutas para trabajar con controladorVistas
-Route::get('/', [controladorVistas::class, 'home'])->name('rutainicio');
 
-Route::get('/consultas', [controladorVistas::class, 'select'])->name('rutaconsulta');
-Route::post('/enviarCliente', [controladorVistas::class, 'procesarCliente'])->name('rutaenviar');
 
 
 
@@ -33,3 +29,9 @@ Route::view('/component2', 'componentes2');
 
 // rutas para trabajar con clienteController
 Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaformulario');
+
+Route::post('/cliente', [clienteController::class, 'store'])->name('rutaenviar');
+
+Route::get('/', [clienteController::class, 'home'])->name('rutainicio');
+
+Route::get('/cliente', [clienteController::class, 'index'])->name('rutaconsulta');

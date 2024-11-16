@@ -6,7 +6,7 @@
 
       <div class="container mt-5 col-md-6">
         {{--@dump($id)--}}
-
+        
       @if (session('exito'))
       <x-Alert tipo='info'>{{session('exito')}}</x-Alert> 
       @endif
@@ -34,7 +34,7 @@
 
           <div class="card-body text-justify ">
 
-          <form method="POST"  action="/enviarCliente">
+          <form action="{{route('rutaenviar')}}" method="POST">
           @csrf
               <div class="mb-3">
                 <label for="nombre" class="form-label">{{ __('Nombre:')}}</label>
@@ -70,7 +70,8 @@
           </form>
         
         </div>
-      </div>
+       
+      </div>  
     </div>
 
   @endsection

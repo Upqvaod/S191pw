@@ -9,12 +9,16 @@ use App\Http\Requests\validadorCliente; //importamos la clase validadorCliente p
 
 class clienteController extends Controller
 {
+    public function home(){
+        return view('inicio');
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $consultaClientes= DB::table('cliente')->get(); //obtenemos todos los registros de la tabla cliente
+        return view('clientes', compact('consultaClientes'));
     }
 
     /**
@@ -39,6 +43,7 @@ class clienteController extends Controller
             "updated_at" => Carbon::now()
         ]);
 
+        //redireccion enviando msj en session para que el usuario sepa que se guardo
         $usuario= $request->input('txtnombre');
         session()->flash('exito','Se guardo el usuario '.$usuario);
 
