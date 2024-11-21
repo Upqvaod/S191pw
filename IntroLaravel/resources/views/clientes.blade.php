@@ -17,7 +17,7 @@
         <div class="card-body">
             <h5 class="fw-bold">{{$cliente->correo}} </h5>
             <h5 class="fw-medium">{{$cliente->telefono}} </h5>
-            <p class="card-text fw-lighter"> </p>
+            <p class="card-text fw-lighter"></p>
         </div>
 
         <div class="card-footer text-muted">

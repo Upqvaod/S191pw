@@ -17,7 +17,8 @@ class clienteController extends Controller
      */
     public function index()
     {
-        $consultaClientes= DB::table('cliente')->get(); //obtenemos todos los registros de la tabla cliente
+        
+        $consultaClientes=DB::table('cliente')->get(); //obtenemos todos los registros de la tabla cliente
         return view('clientes', compact('consultaClientes'));
     }
 
@@ -64,7 +65,8 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $cliente = DB::findOrFail($id);
+        return view('clientes.editar', compact('cliente'));
     }
 
     /**
@@ -72,14 +74,20 @@ class clienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
-    }
+        DB::table('cliente')->where('id', $id)->update([
+            'nombre' => $request->input('txtnombre'),
+            'apellido' => $request->input('txtapellido'),
+            'correo' => $request->input('txtcorreo'),
+            'telefono' => $request->input('txttelefono'),
+            "updated_at" => Carbon::now()
+        ]);}
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        DB::table('cliente')->where('id', $id)->delete();
+        return redirect()->route('rutaconsulta');
     }
 }

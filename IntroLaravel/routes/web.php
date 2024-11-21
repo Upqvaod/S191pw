@@ -35,3 +35,11 @@ Route::post('/cliente', [clienteController::class, 'store'])->name('rutaenviar')
 Route::get('/', [clienteController::class, 'home'])->name('rutainicio');
 
 Route::get('/cliente', [clienteController::class, 'index'])->name('rutaconsulta');
+
+Route::post('/cliente/{id}/editar', [clienteController::class, 'edit'])->name('rutaeditar');
+Route::get('/cliente/{id}/', [clienteController::class, 'update'])->name('');
+
+
+Route::delete('/clientes/{id}', [ClienteController::class, 'destroy'])->name('clientes.eliminar');
+
+
