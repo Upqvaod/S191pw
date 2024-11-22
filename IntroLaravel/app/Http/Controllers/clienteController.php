@@ -65,8 +65,11 @@ class clienteController extends Controller
      */
     public function edit(string $id)
     {
-        $cliente = DB::findOrFail($id);
-        return view('clientes.editar', compact('cliente'));
+        $cliente = DB::table('cliente')->where('id', $id)->first(); // Obtenemos el registro
+        if (!$cliente) {
+            abort(404, 'Cliente no encontrado');
+        }
+        return view('editarCliente', compact('cliente'));
     }
 
     /**
@@ -74,13 +77,24 @@ class clienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'txtnombre' => 'required|string|max:255',
+            'txtapellido' => 'required|string|max:255',
+            'txtcorreo' => 'required|email',
+            'txttelefono' => 'required|string|max:15',
+        ]);
+    
         DB::table('cliente')->where('id', $id)->update([
             'nombre' => $request->input('txtnombre'),
             'apellido' => $request->input('txtapellido'),
             'correo' => $request->input('txtcorreo'),
             'telefono' => $request->input('txttelefono'),
             "updated_at" => Carbon::now()
-        ]);}
+        ]);
+    
+        return redirect()->route('rutaconsulta')->with('success', 'Cliente actualizado correctamente.');
+    }
+        
 
     /**
      * Remove the specified resource from storage.

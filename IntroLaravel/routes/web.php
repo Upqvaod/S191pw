@@ -36,10 +36,9 @@ Route::get('/', [clienteController::class, 'home'])->name('rutainicio');
 
 Route::get('/cliente', [clienteController::class, 'index'])->name('rutaconsulta');
 
-Route::post('/cliente/{id}/editar', [clienteController::class, 'edit'])->name('rutaeditar');
-Route::get('/cliente/{id}/', [clienteController::class, 'update'])->name('');
+Route::get('/clientes/{id}/editar', [clienteController::class, 'edit'])->name('clientes.edit');
+Route::put('/clientes/{id}', [clienteController::class, 'update'])->name('clientes.update');
 
-
-Route::delete('/clientes/{id}', [ClienteController::class, 'destroy'])->name('clientes.eliminar');
+Route::delete('/clientes/{id}', [clienteController::class, 'destroy'])->name('clientes.destroy');
 
 
