@@ -6,26 +6,42 @@
         
     {{-- Inicia tarjetaCliente --}}
 <div class="container mt-5 col-md-8">
+{{-- El foreach se encarga de recorrer la consulta y mostrar los datos en la vista --}}
+    @foreach ($consulta as $cliente)    
 
     <div class="card text-justify font-monospace">
+
         <div class="card-header fs-5 text-primary">
-            Diego Valdelamar Olvera
+            {{$cliente->nombre}} - {{$cliente->apellido}}
         </div>
 
         <div class="card-body">
-            <h5 class="fw-bold">diego_zombie05@hotmail.com</h5>
-            <h5 class="fw-medium">4423334444</h5>
+            <h5 class="fw-bold">{{$cliente->correo}}</h5>
+            <h5 class="fw-medium">{{$cliente->telefono}}</h5>
             <p class="card-text fw-lighter"> </p>
         </div>
 
         <div class="card-footer text-muted">
-            <button type="submit" class="btn btn-warning btn-sm">{{__('Actualizar')}} </button>
-            <button type="submit" class="btn btn-danger btn-sm"> {{__('Eliminar')}} </button>
-        </div>
+    <!-- disparadores para la vista Clientes -->
 
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-list-stars"></i> Opciones
+        </button>
+        <ul class="dropdown-menu">
+            <button type="button" class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#update{{$cliente->id}}">
+                <i class="bi bi-pencil-square"></i>Editar 
+              </button>
+            <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#destroy{{$cliente->id}}">
+                <i class="bi bi-trash"></i> Borrar 
+              </button>
+        </ul>
+      </div> 
     </div>
-    {{-- Finaliza tarjetaCliente --}}
 
-</div> {{-- divcontainer --}}
+</div> 
+    {{-- Finaliza tarjetaCliente --}}
+    @include('options') {{-- Incluye el archivo options.blade.php --}}
+    @endforeach
 
 @endsection
